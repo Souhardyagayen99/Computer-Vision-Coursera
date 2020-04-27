@@ -5,9 +5,9 @@ img = imread('image.jpg');
 [r,c] = size(img);
 
 %Wrire code to split the image into three equal parts and store them in B, G, R channels
-B = img(1:341,1:1200);
-G = img(342:682,1:1200);
-R = img(683:1023,1:1200);
+B = img(1:r/3,:);
+G = img((r/3)+1:(2*r/3),:);
+R = img((2*r/3)+1:r,:);
 
 %concatenate R,G,B channels and assign the RGB image to ColorImg variable
 ColorImg = cat(3, R, G, B);
